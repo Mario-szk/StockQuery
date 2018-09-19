@@ -93,6 +93,9 @@ public class StockUtil {
 		sb.append("市盈率 ").append(stockData.get(StockEnum.市盈率)).append(", ");
 		sb.append("换手率 ").append(stockData.get(StockEnum.换手率)).append("%, ");
 		sb.append("总手 ").append(stockData.get(StockEnum.总手)).append(", ");
+		sb.append("外盘 ").append(stockData.get(StockEnum.外盘)).append(", ");
+		sb.append("内盘 ").append(stockData.get(StockEnum.内盘)).append(", ");
+		sb.append("量比 ").append(stockData.get(StockEnum.量比)).append(", ");
 		sb.append("金额 ").append(stockData.getTotalMoney()).append(", ");
 		sb.append("板块 ").append(stockData.getTypes());
 	}
