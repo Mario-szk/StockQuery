@@ -26,9 +26,9 @@ public class Application {
 		StockQuery.DATA_CACHE = true;
 		// 搜索过滤股票
 		List<StockData> result = StockQuery.query(StockMarketEnum.沪深, true)
-				.filter(Filters.range(StockEnum.当前价格, 3, 30))
-				.filter(Filters.range(StockEnum.市净率, 0.1, 3))
-				.filter(Filters.range(StockEnum.市盈率, 0, 60))
+				.filter(Filters.range(StockEnum.当前价格, 3, 40))
+				.filter(Filters.range(StockEnum.市净率, 0.1, 2.5))
+				.filter(Filters.range(StockEnum.市盈率, 0.1, 30))
 				.filter(Filters.type("计算机", "互联网", "人工智能", "量子通信", "机器人", "医药", "石墨烯", "军工", "食品", "饮料", "白马股"))
 				.orFilter(Filters.change(ChangeEnum.下跌), Filters.change(ChangeEnum.不变))
 				.get();

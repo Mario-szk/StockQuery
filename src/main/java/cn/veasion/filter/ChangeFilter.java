@@ -21,15 +21,15 @@ public class ChangeFilter implements StockFilter {
 		if (change == null) {
 			return true;
 		} else if (ChangeEnum.上涨.equals(change)) {
-			return data.getFirstPrice() < data.getPrice();
+			return data.getChangePriceRatio() > 0;
 		} else if (ChangeEnum.涨停.equals(change)) {
 			return data.getChangePriceRatio() >= 10;
 		} else if (ChangeEnum.下跌.equals(change)) {
-			return data.getFirstPrice() > data.getPrice();
+			return data.getChangePriceRatio() < 0;
 		} else if (ChangeEnum.跌停.equals(change)) {
 			return data.getChangePriceRatio() <= -10;
 		} else if (ChangeEnum.不变.equals(change)) {
-			return data.getFirstPrice() == data.getPrice();
+			return data.getChangePriceRatio() == 0 || data.getDisparity() == 0;
 		}
 		return true;
 	}

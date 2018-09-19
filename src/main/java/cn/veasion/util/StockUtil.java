@@ -86,6 +86,8 @@ public class StockUtil {
 	private static void toString(StringBuilder sb, StockData stockData) {
 		StockCode code = stockData.getStockCode();
 		sb.append(code.getName()).append("(").append(code.getCode()).append(")：");
+		sb.append("昨收 ").append(stockData.get(StockEnum.昨收)).append(", ");
+		sb.append("开盘 ").append(stockData.get(StockEnum.开盘价格)).append(", ");
 		sb.append("最新 ").append(stockData.get(StockEnum.当前价格)).append(", ");
 		sb.append("涨幅 ").append(stockData.get(StockEnum.涨幅)).append("%, ");
 		sb.append("均价 ").append(stockData.get(StockEnum.均价)).append(", ");
