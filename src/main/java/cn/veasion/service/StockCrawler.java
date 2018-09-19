@@ -23,6 +23,12 @@ public interface StockCrawler {
 	 */
 	public static final Integer THREAD_MAX_LOAD_CODE_COUNT = 50;
 
-	List<StockData> findData(StockMarketEnum stockMarket) throws Exception;
+	/**
+	 * 获取数据
+	 * 
+	 * @param stockMarket 股市类型
+	 * @param filterEp 是否过滤创业板块
+	 */
+	List<StockData> findData(StockMarketEnum stockMarket, boolean filterEp) throws Exception;
 
 }

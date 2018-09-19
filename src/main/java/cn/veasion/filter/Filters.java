@@ -24,4 +24,13 @@ public class Filters {
 		return new ChangeFilter(change);
 	}
 
+	/**
+	 * 股票板块过滤
+	 * 
+	 * @param keywords 板块包含的关键字
+	 */
+	public static StockTypeFilter type(String... keywords) {
+		return new StockTypeFilter(keywords);
+	}
+	
 }

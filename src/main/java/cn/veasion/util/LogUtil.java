@@ -14,6 +14,7 @@ public class LogUtil {
 		System.err.println(msg);
 		if (e != null) {
 			// e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 	}
 	
