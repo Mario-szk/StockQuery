@@ -251,7 +251,7 @@ public class EastMoneyCrawler implements StockCrawler {
 
 		private Number ofNumber(String value) {
 			if (value == null || "".equals(value) || "-".equals(value)) {
-				return -1;
+				return 0;
 			} else if (value.length() > 5 && value.indexOf(".") == -1) {
 				return Long.parseLong(value);
 			} else {

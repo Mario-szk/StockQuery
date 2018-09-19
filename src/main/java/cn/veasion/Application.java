@@ -30,7 +30,7 @@ public class Application {
 				.filter(Filters.range(StockEnum.市净率, 0.1, 3))
 				.filter(Filters.range(StockEnum.市盈率, 0, 60))
 				.filter(Filters.type("计算机", "互联网", "人工智能", "量子通信", "机器人", "医药", "石墨烯", "军工", "食品", "饮料", "白马股"))
-				.filter(Filters.change(ChangeEnum.下跌))
+				.orFilter(Filters.change(ChangeEnum.下跌), Filters.change(ChangeEnum.不变))
 				.get();
 		// 股票数据保存到桌面
 		File stockDataFile = StockUtil.saveStockData(result, TxtFileUtil.HOME_PATH + "\\StockData.json");

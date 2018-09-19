@@ -78,6 +78,23 @@ public class StockQuery {
 	}
 
 	/**
+	 * 股票过滤（或关系，满足一个即放行）
+	 * 
+	 * @param stockFilters 条件过滤器（filter1 or filter2）
+	 */
+	public StockQuery orFilter(StockFilter... stockFilters) {
+		stream = stream.filter(data -> {
+			for (StockFilter stockFilter : stockFilters) {
+				if (stockFilter.filter(data)) {
+					return true;
+				}
+			}
+			return false;
+		});
+		return this;
+	}
+	
+	/**
 	 * 获取过滤后的股票数据 
 	 */
 	public List<StockData> get() {
