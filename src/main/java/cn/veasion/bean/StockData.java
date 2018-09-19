@@ -324,7 +324,7 @@ public class StockData implements Serializable {
 		this.types = types;
 	}
 
-	public double get(StockEnum stockEnum) {
+	public Number get(StockEnum stockEnum) {
 		switch (stockEnum) {
 		case 开盘价格:
 			return firstPrice;
@@ -339,13 +339,13 @@ public class StockData implements Serializable {
 		case 量比:
 			return volumeRatio;
 		case 内盘:
-			return insideDisc.doubleValue();
+			return insideDisc;
 		case 外盘:
-			return outerDisc.doubleValue();
+			return outerDisc;
 		case 均价:
 			return avgPrice;
 		case 总手:
-			return totalHand.doubleValue();
+			return totalHand;
 		case 昨收:
 			return yesterdayPrice;
 		case 最低价:

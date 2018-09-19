@@ -32,7 +32,7 @@ public class RangeFilter implements StockFilter {
 
 	@Override
 	public boolean filter(StockData stockData) {
-		double value = stockData.get(stock);
+		double value = stockData.get(stock).doubleValue();
 		return value >= min && value <= max;
 	}
 
